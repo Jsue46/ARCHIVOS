@@ -1,0 +1,17 @@
+#Crear el Discos
+mkdisk -size=100 -unit=k -path=/home/daaniieel/Desktop/Discos/DISCO.mia 
+
+#Crear las particiones al disco
+fdisk -type=P -unit=k -name=Part1 -size=10 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+fdisk -type=P -unit=k -name=Part2 -size=10 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+fdisk -type=P -unit=k -name=Part3 -size=1 -path=/home/daaniieel/Desktop/Discos/disco.mia
+#Montar una partcion al disco
+mount -path=/home/daaniieel/Desktop/Discos/disco.mia -name=Part1
+
+#Aplicar formato al disco
+mkfs -type=full -id=061A
+
+#Iniciar Sesion
+Login -pass=123 -user=root -id=061A

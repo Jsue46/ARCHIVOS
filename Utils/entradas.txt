@@ -1,0 +1,105 @@
+#Crear el Discos
+mkdisk -size=100 -unit=k -path=/home/daaniieel/Desktop/Discos/DISCO.mia 
+
+#Crear las particiones al disco
+fdisk -type=P -unit=k -name=Part1 -size=10 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+fdisk -type=P -unit=k -name=Part2 -size=10 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+fdisk -type=P -unit=k -name=Part3 -size=1 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+fdisk -type=E -unit=k -name=Part4 -size=6 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+fdisk -type=L -unit=k -name=Part5 -size=1 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+fdisk -type=L -unit=k -name=Part6 -size=1 -path=/home/daaniieel/Desktop/Discos/disco.mia
+
+#Montar una partcion al disco
+mount -path=/home/daaniieel/Desktop/Discos/disco.mia -name=Part1
+mount -path=/home/daaniieel/Desktop/Discos/disco.mia -name=Part2
+mount -path=/home/daaniieel/Desktop/Discos/disco.mia -name=Part3
+mount -path=/home/daaniieel/Desktop/Discos/disco.mia -name=Part4 
+
+#Listar las particiones montadas
+mounted
+
+#Aplicar formato al disco
+mkfs -type=full -id=061A   #Aqui pones el Id que te tira el mount.          y ese mismo id lo sigues usando para los de abajo, recorda que
+ mkfs -type=full -id=062A                       # ese id lo va generar por el No. de tu carnet.
+ mkfs -type=full -id=061A 
+/Eliminar el disco
+rmdisk -path="/home/daaniieel/Desktop/Discos/DISCO.mia"
+
+#Iniciar Sesion
+Login -pass=123 -user=roca -id=061A
+Login -pass=123 -user=roca -id=062A
+Login -pass=123 -user=root -id=062A
+Login -pass=123 -user=root -id=061A
+
+#Crear Grupo 
+mkgrp -name=usuarios
+
+#Eliminar un Grupo
+rmgrp -name=usuarios1
+rmgrp -name=usuarios
+
+#Agregar un usuario al Grupo
+mkusr -user=user1 -pass=usuario -grp=usuarios
+
+#Eliminar un Usuario
+rmusr -user=user1
+
+#Cambiar de grupo al usuario 
+chgrp -user=user1 -grp=root
+chgrp -user=user1 -grp=usuarios
+
+#Cerrar Sesion
+Logout
+
+#mkfile
+
+mkfile -size=15 -path=/home/user/docs/a.txt -r
+cat -file1=/home/user/docs/a.txt
+mkfile -size=5 -path=/home/user/docs/b.txt -r
+cat -file1=/home/user/docs/b.txt
+
+#crea el archivo vacio
+mkfile -path=/home/user/docs/b.txt -r
+
+
+#va copiar lo que esta en el archivo de la segunda ruta y lo va a pegar en la primera ruta.   
+    #ejemplo "HOLA MUNDO" eso tiene el archivo c.txt  y eso va copiar al archivo b.txt
+mkfile -path=/home/user/docs/b.txt -r -cont=/home/daaniieel/docs/c.txt 
+
+#mkdir 
+mkdir -p -path=/home/daaniieel/docs/usac
+
+mkdir -path="/home/mis documentos/archivos clases"
+mkdir -p -path="/home/mis documentos/archivos clases"
+mkdir -path=/root/nuevo_dir
+
+#cat
+cat -file1=/home/user/docs/a.txt
+cat -file1="/home/user/docs/a.txt" -file2="/home/user/docs/b.txt" -file3="/home/daaniieel/docs/c.txt"
+cat -fil1=/users.txt
+
+#Reportes
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte1.jpg -name=mbr
+rep -id=062A -path=/home/daaniieel/Desktop/reportes/reporte2.jpg -name=mbr
+
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte4.jpg -name=disk
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte3.jpg -name=sb
+
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte5.jpg  -name=inode
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte6.jpg  -name=block
+
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte7.txt  -name=bm_inode
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte8.txt  -name=bm_bloc
+
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte9.jpg  -name=tree
+
+
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte10.txt -path_file_ls=/home/user/docs/a.txt -name=file
+
+rep -id=061A -path=/home/daaniieel/Desktop/reportes/reporte11.jpg -path_file_ls=/ -name=ls
+

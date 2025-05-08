@@ -1,0 +1,90 @@
+**Manual Técnico del Proyecto**
+
+# **1. Introducción**
+Este manual técnico proporciona una guía completa sobre el diseño, implementación y funcionamiento del sistema desarrollado en el Proyecto 1 de la materia MIA. Se abordan aspectos clave como arquitectura, estructura de datos, algoritmos utilizados y tecnologías empleadas.
+
+# **2. Requerimientos del Sistema**
+
+## **2.1 Requerimientos de Hardware**
+- Procesador: Intel Core i5 o superior
+- Memoria RAM: 8GB mínimo
+- Espacio en disco: 10GB libres
+- Sistema Operativo: Windows 10 o superior / Linux / macOS
+
+## **2.2 Requerimientos de Software**
+- Lenguaje de programación: Python 3.10+
+- Frameworks: Flask (para backend), React.js (para frontend)
+- Base de datos: PostgreSQL / MongoDB
+- Herramientas adicionales: Docker, Git, Visual Studio Code, Postman
+
+# **3. Arquitectura del Sistema**
+El sistema está diseñado con una arquitectura cliente-servidor basada en microservicios.
+
+## **3.1 Diagrama de Arquitectura**
+
+*(Insertar diagrama de arquitectura del sistema)*
+
+## **3.2 Componentes**
+- **Frontend**: Aplicación web basada en React.js para la interfaz de usuario.
+- **Backend**: API REST desarrollada en Flask para la gestión de datos.
+- **Base de Datos**: PostgreSQL para almacenamiento relacional de datos.
+- **Autenticación**: JWT para autenticación segura de usuarios.
+
+# **4. Modelado de Datos**
+
+## **4.1 Diagrama Entidad-Relación (ER)**
+*(Insertar diagrama ER con entidades y relaciones clave)*
+
+## **4.2 Tablas Principales**
+- **Usuarios** (id, nombre, correo, contraseña encriptada, rol)
+- **Solicitudes** (id, usuario_emisor, usuario_receptor, estado)
+- **Publicaciones** (id, usuario_id, contenido, fecha, likes, comentarios)
+
+# **5. Algoritmos y Estructuras de Datos**
+
+## **5.1 Estructuras de Datos Utilizadas**
+- **Árbol AVL**: Para almacenamiento y búsqueda eficiente de usuarios.
+- **Lista Doblemente Enlazada**: Para manejo de solicitudes de amistad.
+- **Tabla Hash**: Para indexación rápida de publicaciones.
+
+## **5.2 Algoritmos Clave**
+- **Búsqueda en Árbol AVL**: Para localizar usuarios en tiempo logarítmico.
+- **Ordenamiento MergeSort**: Para ordenar publicaciones por fecha.
+- **Generación de Reportes en PDF**: Utilizando la librería ReportLab en Python.
+
+# **6. Interfaces del Sistema**
+
+## **6.1 Endpoints del Backend**
+- `POST /login` - Autenticación de usuario.
+- `GET /usuarios` - Obtención de lista de usuarios.
+- `POST /solicitudes` - Enviar solicitud de amistad.
+- `GET /publicaciones` - Listado de publicaciones.
+
+## **6.2 Interfaz de Usuario (UI)**
+*(Insertar capturas de pantalla del diseño de la interfaz)*
+
+# **7. Seguridad y Autenticación**
+- Uso de JWT para autenticación de usuarios.
+- Encriptación de contraseñas con bcrypt.
+- Políticas de acceso y permisos según rol.
+
+# **8. Despliegue del Sistema**
+
+## **8.1 Entorno de Desarrollo**
+- Uso de Docker para contenedorización.
+- Configuración de variables de entorno en `.env`.
+
+## **8.2 Entorno de Producción**
+- Servidor en la nube con Nginx como proxy inverso.
+- PostgreSQL alojado en AWS RDS.
+
+# **9. Mantenimiento y Pruebas**
+
+## **9.1 Estrategias de Mantenimiento**
+- Monitoreo de logs con Logstash.
+- Uso de pruebas automatizadas con PyTest.
+- Integración continua con GitHub Actions.
+
+# **10. Conclusiones**
+Este documento detalla los aspectos clave del sistema, incluyendo su diseño, implementación y despliegue. Se recomienda seguir las mejores prácticas descritas para garantizar la escalabilidad y seguridad del sistema.
+
